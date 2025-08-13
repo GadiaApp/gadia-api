@@ -1,0 +1,22 @@
+{
+  "entryFile": "start/routes.ts",
+  "noImplicitAdditionalProperties": "throw-on-extras",
+  "controllerPathGlobs": [
+    "app/controllers/**/*.ts"
+  ],
+  "spec": {
+    "outputDirectory": "docs",
+    "specVersion": 3,
+    "securityDefinitions": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  },
+  "routes": {
+    "routesDir": "start",
+    "middleware": "express"
+  }
+}
