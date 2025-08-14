@@ -56,13 +56,18 @@
     "@adonisjs/auth": "^9.4.0",
     "@adonisjs/core": "^6.18.0",
     "@adonisjs/cors": "^2.2.1",
+    "@adonisjs/limiter": "^2.4.0",
     "@adonisjs/lucid": "^21.6.1",
     "@vinejs/vine": "^3.0.1",
     "bullmq": "^5.57.0",
     "ioredis": "^5.7.0",
+    "jose": "^6.0.12",
     "luxon": "^3.7.1",
+    "openid-client": "^6.6.4",
+    "otplib": "^12.0.1",
     "pg": "^8.16.3",
-    "reflect-metadata": "^0.2.2"
+    "reflect-metadata": "^0.2.2",
+    "samlify": "^2.10.1"
   },
   "hotHook": {
     "boundaries": [
