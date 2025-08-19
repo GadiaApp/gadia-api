@@ -28,7 +28,7 @@ server.use([
   () => import('@adonisjs/cors/cors_middleware'),
   () => import('#middleware/response_formatter_middleware'),
   () => import('#middleware/camel_case_response_middleware'),
-  () => import('#middleware/audit_middleware')
+  () => import('#middleware/audit_middleware'),
 ])
 
 /**
@@ -41,4 +41,6 @@ router.use([() => import('@adonisjs/core/bodyparser_middleware')])
  * Named middleware collection must be explicitly assigned to
  * the routes or the routes group.
  */
-export const middleware = router.named({})
+export const middleware = router.named({
+  auth: () => import('#middleware/auth_middleware'),
+})
