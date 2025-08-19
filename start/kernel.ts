@@ -27,7 +27,8 @@ server.use([
   () => import('#middleware/force_json_response_middleware'),
   () => import('@adonisjs/cors/cors_middleware'),
   () => import('#middleware/response_formatter_middleware'),
-  () => import('#middleware/camel_case_response_middleware')
+  () => import('#middleware/camel_case_response_middleware'),
+  () => import('#middleware/audit_middleware')
 ])
 
 /**
