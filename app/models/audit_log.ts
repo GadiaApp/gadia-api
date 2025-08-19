@@ -28,9 +28,6 @@ export default class AuditLog extends BaseModel {
   @column.dateTime({ autoCreate: true })
   declare createdAt: DateTime
 
-  @belongsTo(() => User, {
-    foreignKey: 'userId',
-    localKey: 'id',
-  })
+  @belongsTo(() => User)
   declare user: BelongsTo<typeof User>
 }

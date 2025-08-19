@@ -33,21 +33,12 @@ export default class LoginHistory extends BaseModel {
   @column.dateTime({ autoCreate: true })
   declare createdAt: DateTime
 
-  @belongsTo(() => User, {
-    foreignKey: 'userId',
-    localKey: 'id',
-  })
+  @belongsTo(() => User)
   declare user: BelongsTo<typeof User>
 
-  @belongsTo(() => SsoProvider, {
-    foreignKey: 'providerId',
-    localKey: 'id',
-  })
+  @belongsTo(() => SsoProvider)
   declare provider?: BelongsTo<typeof SsoProvider>
 
-  @belongsTo(() => Device, {
-    foreignKey: 'deviceId',
-    localKey: 'id',
-  })
+  @belongsTo(() => Device)
   declare device?: BelongsTo<typeof Device>
 }

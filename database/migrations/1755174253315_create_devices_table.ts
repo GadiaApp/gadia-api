@@ -7,6 +7,13 @@ export default class extends BaseSchema {
     this.schema.createTable(this.tableName, (table) => {
       table.increments('id')
 
+      table.integer('user_id').unsigned().notNullable()
+      table.foreign('user_id').references('id').inTable('users').onDelete('CASCADE')
+
+      table.string('fingerprint').notNullable().unique()
+      table.string('name').nullable()
+      table.timestamp('last_used_at')
+
       table.timestamp('created_at')
       table.timestamp('updated_at')
     })
