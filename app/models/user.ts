@@ -25,6 +25,9 @@ export default class User extends BaseModel {
   @column({ serializeAs: null })
   declare mfaSecret: string | null
 
+  @column({ serializeAs: null })
+  declare mfaKeyId: string | null
+
   @column()
   declare roleId: number | null
 

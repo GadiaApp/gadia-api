@@ -4,6 +4,7 @@ import JwtService from '#services/jwt_service'
 import { HttpContext } from '@adonisjs/core/http'
 import InvalidOrExpiredAuthTokenException from '#exceptions/invalid_or_expired_auth_token_exception'
 import User from '#models/user'
+import ApiTokenService from '#services/api_token_service'
 
 export default class AuthMiddleware {
   async handle(ctx: HttpContext, next: NextFn) {
@@ -31,7 +32,7 @@ export default class AuthMiddleware {
     } catch {}
 
     try {
-      const apiToken = undefined
+      const apiToken = await ApiTokenService.verify(token)
 
       if (apiToken) {
         user = await apiToken.related('user').query().first()
@@ -42,6 +43,8 @@ export default class AuthMiddleware {
         }
       }
     } catch {}
+
+    // ADD SSO HANDLING HERE (Service)
 
     throw new InvalidOrExpiredAuthTokenException()
   }

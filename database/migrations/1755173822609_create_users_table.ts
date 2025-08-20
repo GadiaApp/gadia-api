@@ -11,6 +11,7 @@ export default class extends BaseSchema {
       table.string('password').nullable()
       table.boolean('mfa_enabled').defaultTo(false)
       table.string('mfa_secret').nullable()
+      table.string('mfa_key_id').nullable()
       table.integer('role_id').unsigned().nullable()
       table.foreign('role_id').references('id').inTable('roles').onDelete('SET NULL')
 

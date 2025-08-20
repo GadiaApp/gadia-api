@@ -18,4 +18,9 @@ export default {
     expiration: env.get('REFRESH_TTL_SECONDS'),
     defaultDays: env.get('REFRESH_REMEMBER_DEFAULT_DAYS'),
   },
+  mfa: {
+    issuer: env.get('MFA_ISSUER', 'GADIA'),
+    keyId: env.get('MFA_KEY_ID', 'gad_mfa_key'),
+    key: env.get('MFA_KEY_BASE64', ''),
+  },
 }

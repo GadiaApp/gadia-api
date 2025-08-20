@@ -14,7 +14,7 @@ export default class ApiToken extends BaseModel {
   declare token: string
 
   @column()
-  declare userId: number
+  declare userId: number | null
 
   @column()
   declare scopes: string[]
