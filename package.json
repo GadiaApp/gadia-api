@@ -1,8 +1,7 @@
 {
-  "name": "gadia-api",
-  "version": "0.0.0",
-  "private": true,
-  "type": "module",
+  "name": "@gadia/api",
+  "version": "0.0.1",
+  "private": false,
   "license": "Apache-2.0",
   "scripts": {
     "start": "node bin/server.js",
