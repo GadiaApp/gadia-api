@@ -2,6 +2,7 @@
   "name": "@gadia/api",
   "version": "0.0.1",
   "private": false,
+  "type": "module",
   "license": "Apache-2.0",
   "scripts": {
     "start": "node bin/server.js",

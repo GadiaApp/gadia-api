@@ -1,7 +1,8 @@
 import { DateTime } from 'luxon'
-import { BaseModel, belongsTo, column } from '@adonisjs/lucid/orm'
-import type { BelongsTo } from '@adonisjs/lucid/types/relations'
+import { BaseModel, belongsTo, column, hasOne } from '@adonisjs/lucid/orm'
+import type { BelongsTo, HasOne } from '@adonisjs/lucid/types/relations'
 import User from '#models/user'
+import RefreshToken from '#models/refresh_token'
 
 export default class Device extends BaseModel {
   @column({ isPrimary: true })
@@ -27,4 +28,7 @@ export default class Device extends BaseModel {
 
   @belongsTo(() => User)
   declare user: BelongsTo<typeof User>
+
+  @hasOne(() => RefreshToken)
+  declare refreshTokens?: HasOne<typeof RefreshToken>
 }

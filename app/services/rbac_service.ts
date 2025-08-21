@@ -10,6 +10,6 @@ export default class RbacService {
     if (!user) return false
 
     const userPerms = new Set(user.role.permissions.map((p) => p.key))
-    return requiredPerms.some((perm) => userPerms.has(perm))
+    return requiredPerms.every((perm) => userPerms.has(perm))
   }
 }

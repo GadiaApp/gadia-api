@@ -29,6 +29,7 @@ server.use([
   () => import('#middleware/response_formatter_middleware'),
   () => import('#middleware/camel_case_response_middleware'),
   () => import('#middleware/audit_middleware'),
+  () => import('#middleware/rate_limit_middleware')
 ])
 
 /**
